@@ -6,6 +6,6 @@ root 'products#index'
 root 'cart#show'
 resources :products
 resources :orders
-resources :cart only: [:show]
+resources :cart 
 
 end
