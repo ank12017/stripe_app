@@ -1,0 +1,35 @@
+<p>
+  <strong>Brand:</strong>
+  <%= @product.brand.name %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+ 
+<p>
+  <strong>Item:</strong></br>
+  <%= @product.item %>
+</p>
+<p>
+  <strong>Price:</strong></br>
+  <%= @product.price %>
+</p>
+ 
+<p>
+  <strong>Discription:</strong>
+  <%= @product.discription %>
+</p></br>
+<p><%= image_tag @product.image.url%> </p>
+<p>
+<% unless @product.id %>
+<%= link_to "Add to Cart", product_path(:product_id => @product.id) %>
+ <% else %>
+<%= link_to "Go to cart", cart_path(@product) %>
+<% end %>
+</p>
+<%= link_to 'Edit', edit_product_path %>
+<%= link_to 'Back', products_path %>
+<%= link_to 'Destroy', @product, :confirm => 'Are you sure?', :method => :delete %> 
+
+

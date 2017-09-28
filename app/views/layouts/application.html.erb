@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StripeApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Stripe_App</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <% if user_signed_in? %> 
+            <li><%= link_to "Orders", orders_path %></li>
+            <li><%= link_to "Products", products_path %></li>
+            <li><a href="#">Page 3</a></li>
+            <li><%= link_to "log out", destroy_user_session_path %><span class="glyphicon glyphicon-user"></span></li>
+            <li><%= link_to "Edit-profile", edit_user_registration_path %><span class="glyphicon glyphicon-user"></span></li>
+          </ul>
+          <% else %>
+            <ul class="navbar navbar-right">
+            
+              <li><%= link_to "SignUp", new_user_registration_path %><span class="glyphicon glyphicon-user"></span></li>
+              <li><%= link_to "login", new_user_session_path %><span class="glyphicon glyphicon-log-in"></span></li>
+            </ul>
+            <% end %>
+        </div>
+      </a>
+    </div>
+  </div>
+</nav> 
+ <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<h1>All Order</h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Order_details</th>
+    
+  </tr>
+ 
+  <% @order.each do |order| %>
+    <tr>
+      <td><%= order.name %></td>
+      <td><%= order.order_details %></td>
+      
+
+      <td><%= link_to 'Show', order_path(order) %></td>
+      <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New order', new_order_path %>
