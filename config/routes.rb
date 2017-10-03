@@ -4,8 +4,13 @@ Rails.application.routes.draw do
 get 'cart/show'
 root 'products#index'
 root 'cart#show'
-resources :products
+resources :products do 
+	member do 
+		post :create_order_items
+	end
+end
 resources :orders
 resources :cart 
+resources :order_items
 
 end

@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170927134505) do
     t.integer "product_id"
     t.integer "order_id"
     t.integer "quantity"
+    t.float "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_items_on_order_id"
